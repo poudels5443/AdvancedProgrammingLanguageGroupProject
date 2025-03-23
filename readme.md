@@ -126,3 +126,20 @@ This is a multi-threaded chat application implemented in C++ and in Python. The 
     ```bash
     python3 chat_app.py
     ```
+
+## Screenshots
+
+### 1. Send Message
+![Send Message](Screenshots/Send%20Message.png)
+
+### 2. Display All Messages
+![Display All Messages](Screenshots/Display%20All%20Messages.png)
+
+### 3. Display All User IDs
+![Display All User IDs](Screenshots/Display%20All%20User%20IDs.png)
+
+### 4. Search By User ID
+![Search By User ID](Screenshots/Search%20By%20User%20ID.png)
+
+### 5. Search By Keyword
+![Search By Keyword](Screenshots/Search%20By%20Keyword.png)
