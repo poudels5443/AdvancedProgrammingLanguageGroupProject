@@ -116,7 +116,7 @@ def chat_ui(users):
         else:
             print("Invalid choice. Try again.")
 
-# Entry point
+# Entry point of the program
 if __name__ == "__main__":
     # Create users
     user1 = User("Alice")
