@@ -116,5 +116,44 @@ def chat_ui(users):
         else:
             print("Invalid choice. Try again.")
 
+# Entry point of the program
+if __name__ == "__main__":
+    # Create users
+    user1 = User("Alice")
+    user2 = User("Bob")
+    user3 = User("Charlie")
+    user4 = User("Dave")
+    user5 = User("Eve")
 
-    
+    users = [user1, user2, user3, user4, user5]
+
+    # Predefined messages
+    messages1 = ["Hello Bob!", "How are you?", "Let's catch up soon."]
+    messages2 = ["Hi Alice!", "I'm good, thanks.", "Sure, sounds great."]
+    messages3 = ["Hey Alice and Bob!", "What are you guys up to?", "Join me for a game?"]
+    messages4 = ["Dave here!", "Anyone up for coffee?", "Ping me later."]
+    messages5 = ["Eve has entered the chat.", "Hi all!", "Nice to meet you!"]
+
+    # Recipients for each user
+    recipients1 = ["Bob"]
+    recipients2 = ["Alice"]
+    recipients3 = ["Alice", "Bob"]
+    recipients4 = ["Alice", "Charlie", "Eve"]
+    recipients5 = ["Dave", "Bob", "Charlie"]
+
+    # Start threads for simulation
+    threads = [
+        threading.Thread(target=simulate_user, args=(user1, recipients1, messages1)),
+        threading.Thread(target=simulate_user, args=(user2, recipients2, messages2)),
+        threading.Thread(target=simulate_user, args=(user3, recipients3, messages3)),
+        threading.Thread(target=simulate_user, args=(user4, recipients4, messages4)),
+        threading.Thread(target=simulate_user, args=(user5, recipients5, messages5))
+    ]
+
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+
+    # Start user interaction
+    chat_ui(users)
